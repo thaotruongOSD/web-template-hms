@@ -1,0 +1,136 @@
+.sidebar {
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #6c757d;
+    color: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 4px 1px #4c4c4c;
+    width: 260px;
+    height: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 0;
+    left: 0px;
+    z-index: 999;
+    transition: left .3s ease;
+
+    a {
+        cursor: pointer;
+        border: 0;
+        border-radius: 0;
+        color: rgba(255, 255, 255, 0.5);
+        background: #6c757d;
+    }
+
+    a:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    a.active {
+        background: darken(#6c757d, 5%);
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .sidebar-content {
+        max-height: calc(100% - 30px);
+        height: calc(100% - 30px);
+        overflow-y: auto;
+        position: relative;
+
+        .sidebar-header {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+
+            >a {
+                text-transform: uppercase;
+                font-weight: bold;
+                flex-grow: 1;
+                text-decoration: none;
+            }
+
+        }
+
+        .sidebar-profile {
+            padding: 20px;
+            overflow: hidden;
+
+            .user-pic {
+                float: left;
+                width: 60px;
+                padding: 2px;
+                border-radius: 50%;
+                margin-right: 15px;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+            .user-info {
+                float: left;
+
+                >span {
+                    display: block;
+                }
+            }
+
+        }
+
+        .sidebar-menu {
+            padding-bottom: 10px;
+
+            .header-menu span {
+                font-weight: bold;
+                font-size: 14px;
+                padding: 15px 20px 5px 20px;
+                display: inline-block;
+            }
+
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+
+                li a {
+                    display: inline-block;
+                    width: 100%;
+                    text-decoration: none;
+                    position: relative;
+                    padding: 8px 30px 8px 20px;
+
+                    i {
+                        margin-right: 10px;
+                        font-size: 12px;
+                        width: 30px;
+                        height: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                        border-radius: 4px;
+                    }
+
+                    &:hover>i::before {
+                        display: inline-block;
+                        animation: swing ease-in-out .5s 1 alternate;
+                    }
+
+                    span.label,
+                    span.badge {
+                        float: right;
+                        margin-top: 8px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+
+        }
+
+
+    }
+
+}

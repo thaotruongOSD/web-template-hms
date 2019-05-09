@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-fixed-top">
+  <img class="navbar-brand mb-0 img-brand" src="{{logo}}">
+  <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarToggler"
+          aria-controls="navbarToggler"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="toggleSidebar()">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse menu"
+       id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" routerLinkActive="active">
+          <li class="nav-item active"
+              *ngFor="let item of menuItems">
+              <a *ngIf="item.url" (click)="onClickMenuItem(item)"                
+                 class="nav-link list-group-item text-capitalize font-weight-bold"
+                 routerLink="{{item.url}}">{{item.label}}
+                  <span class="sr-only">(current)</span>
+              </a>
+          </li>
+      </ul>
+      
+      <div class="dropdown">
+          <div class="dropdown-profile" id="dropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img class="header__profile-image" src="{{userAvatar}}" alt="{{userName}}" height="42" width="42"/>
+          </div>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownProfile">
+          <button class="dropdown-item text-capitalize font-weight-bold" type="button" (click)="onClickUserName($event)">{{userName}}</button>
+          <button class="dropdown-item text-primary" type="button" (click)="onClickLogout($event)">logout</button>
+        </div>
+      </div>
+
+  </div>
+</nav>

@@ -1,0 +1,32 @@
+<nav id="sidebar" class="sidebar">
+  <div class="sidebar-content">
+      <div class="sidebar-header">
+        <a href="#">{{sidebarTitle}}</a>
+      </div>
+
+      <div class="sidebar-profile">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded" src="{{userAvatar}}" alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name text-capitalize font-weight-bold">
+            {{userName}}
+          </span>
+        </div>       
+      </div>
+      <hr>
+      <div class="sidebar-menu">
+        <ul>
+          <li class="nav-item active"
+              *ngFor="let item of ListItem">
+              <a *ngIf="item.url"              
+                 class="nav-link list-group-item text-capitalize font-weight-bold"
+                 (click)="onClickMenuItem(item)"
+                 routerLink="{{item.url}}">{{item.label}}
+                  <span class="sr-only">(current)</span>
+              </a>
+          </li>
+      </ul>
+      </div>
+  </div>
+</nav>

@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "web-layout": [
+        "dist/web-layout"
+      ],
+      "web-layout/*": [
+        "dist/web-layout/*"
+      ]
+    }
   }
 }

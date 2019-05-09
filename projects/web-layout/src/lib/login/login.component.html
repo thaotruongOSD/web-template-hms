@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h2 class="text-center">Login</h2>
+      <hr>
+
+      <form [formGroup]="loginForm">
+        <div class="form-group">
+          <label for="userName">UserName: </label>
+          <input [(ngModel)]="user.userName" name="email" class="form-control" id="userName" aria-describedby="emailHelp"
+            placeholder="Enter UserName" formControlName="userNameControl"
+            [ngClass]="{'is-invalid':(loginForm.get('userNameControl')?.touched ||
+            loginForm.get('userNameControl')?.dirty)&&
+                                         !loginForm.get('userNameControl')?.valid}" required>
+          <span class="error invalid" *ngIf="(loginForm.get('userNameControl')?.touched ||
+          loginForm.get('userNameControl')?.dirty) &&
+          loginForm.get('userNameControl')?.errors">
+            <span *ngIf="loginForm.get('userNameControl')?.errors.required">
+                Please input username!
+            </span>
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input [(ngModel)]="user.password" name="password" type="password" class="form-control" id="password" placeholder="Password"
+            formControlName="passwordControl" 
+            [ngClass]="{'is-invalid':(loginForm.get('passwordControl')?.touched ||
+            loginForm.get('passwordControl')?.dirty)&&
+                                    !loginForm.get('passwordControl')?.valid}" required>
+          <span class="error invalid-feedback" *ngIf="(loginForm.get('passwordControl')?.touched ||
+          loginForm.get('passwordControl')?.dirty) &&
+          loginForm.get('passwordControl')?.errors">
+            <span *ngIf="loginForm.get('passwordControl')?.errors.required">
+                Please input password!
+            </span>
+          </span>
+        </div>
+
+        <div>&nbsp;</div>
+        <button (click)="clickLogin(user)" type="submit" class="btn btn-signin text-center"
+        data-toggle="modal" data-target="#infoModal">Login</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loginForm.valid" class="modal fade" id="infoModal" tabindex="-1" role="dialog" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">Information</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Login success with usename: {{user.userName}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
