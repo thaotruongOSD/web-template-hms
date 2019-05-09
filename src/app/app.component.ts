@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   userAvatar = './favicon.ico';
   logo = './favicon.ico';
   menuItems: Array<MenuItem> = [];
-  ListItem = [
+  listItem = [
     {
       label: 'menu1',
       url: 'menu1'

@@ -11,7 +11,7 @@ export class LeftSidebarComponent implements OnInit {
   constructor() { }
 
   @Input()
-  ListItem: Array<MenuItem> = [];
+  listItem: Array<MenuItem> = [];
   @Input()
   userName: string;
   @Input()

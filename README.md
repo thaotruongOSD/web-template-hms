@@ -1,27 +1,65 @@
-# VinTemplate
+# WEB-TEMPLATE-HMS - SUPPORT BASIC LAYOUT FOR WEBSITE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+## Table of Contents
 
-## Development server
+- [Demo](#demo)
+- [Features](#features)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Getting help](#getting-help)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Features
+- Header (support render menu and dynamic logo, avatar,..)
+- Sidebar (support render menu)
+- Footer
+- Login form
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Demo
 
-## Build
+Please check all components we have in action at https://ng-bootstrap.github.io
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Dependencies
 
-## Running unit tests
+The only two dependencies are [Angular](https://angular.io) and [Bootstrap 4](https://getbootstrap.com) CSS.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation
 
-## Running end-to-end tests
+You need to have an Angular project with the supported Angular version. We strongly recommend using [Angular CLI](https://cli.angular.io) for this.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+You also need to add Bootstrap 4 CSS to your application by using your preferred way (it really depends on the setup you're using). Ex. for Angular CLI you can [get Bootstrap from npm](https://www.npmjs.com/package/bootstrap) and update your `angular.json` with something like:
 
-## Further help
+```json
+"styles": [
+  "node_modules/bootstrap/dist/css/bootstrap.min.css"
+]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+ "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ],
+```
+
+After installing the above dependencies, install `web-template-hms` via:
+```shell
+npm i web-template-hms
+```
+Once installed you need to import our main module:
+```js
+import {WebLayoutModule } from 'web-template-hms';
+
+@NgModule({
+  ...
+  imports: [WebLayoutModule, ...],
+  ...
+})
+export class YourAppModule {
+}
+```
+
+
+## Getting help
+
+So if you are in trouble, here's where you can look for help.
+
+
+
